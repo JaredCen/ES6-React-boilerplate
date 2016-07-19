@@ -34,53 +34,69 @@
 
 ##配置文件gulpfile.js
 
+
 ###web开发基础工作流搭建相关gulp插件
 
 - **gulp-less**
+
 less服务端编译
 
 - **gulp-minify-css**
+
 css文件压缩
 
 - **gulp-autoprefixer**
+
 根据设置浏览器版本自动处理css3样式中的浏览器前缀
 
 - **gulp-uglify**
+
 js文件压缩
 
 - **gulp-concat**
+
 文件合并
 
 - **gulp-connect、gulp-livereload**
+
 构建本地Web开发服务器，实现页面监听update自动刷新
 
 
 - **gulp-if**
 
 - **gulp-yargs**
+
 获取接受参数，配合gulp-if实现开发/生产搭建选择
+
 
 ###ES6及JSX转码相关插件
 
 - **browserify**
+
 打包预编译js文件
 
 - **babelify**
+
 实现es6及jsx转码
 
 - **vinyl-source-stream** 
+
 将常规流转换为包含Stream的vinyl对象，并且重命名（这一步是在gulp中使用browserify的关键点）
 
 - **vinyl-buffer** 
+
 将vinyl对象内容中的Stream转换为Buffer（gulp不支持Stream）
 
 关于stream和buffer的解释详见**[这篇博客](https://segmentfault.com/a/1190000003770541)**
 
 - **dependify** 
+
 使打包后的js文符合UMD规范，并可以指定不将一些外部依赖包打进包内(standalonify模块作用一致)
 
 - **watchify** 
+
 提高打包速度，检测文件改动并只update需要更新的文件（不用每次都重新打包）
+
 
 ###gulpfile.js完整代码
 
@@ -189,7 +205,8 @@ gulp.task('default', ['connect', 'build-js', 'build-css', 'watch']);
 ```
 
 
-##附上webpack的配置文件webpack.config.js
+
+##webpack的配置文件webpack.config.js
 
 >显然，webpack的配置方式更为直观，但个人比较喜欢browserify与gulp协作的pipe stream方式，孰优孰劣在这里就先不必较了。
 
